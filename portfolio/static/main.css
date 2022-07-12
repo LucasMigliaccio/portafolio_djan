@@ -1,0 +1,23 @@
+body {background: #070006;}
+
+.bg-black{
+  background: black;
+}
+
+.card-project:hover{
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.contenedorFormulario{
+
+  background-color: rgba(77, 0, 54, 0.8);
+
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 10px;
+  padding: 1px 0px;
+
+
+
+}

@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% load static %}
+<header class="row bg-black">
+    <div class="col-md-4 my-auto">
+        <img src="{% static 'portfolio\184647836_1062100440864820_6691863271731750045_n.jpg' %}" style="border-radius: 15px;" width="390" height="390" alt="">
+    </div>
+
+    <div class="col-md-8 my-auto">
+        <h1> <strong>Lucas Migliaccio</strong></h1>
+        <h3>Python Backend developer/Python Software developer</h3>
+        <p>Tengo 20 años, me encuentro en mi tercer año de ingeniería informática en la Universidad Nacional Arturo Jauretche, programo ya hace 1 año y 2 meses, Asimismo cuento con una gran cantidad de horas por día a mi favor resolviendo problemas, creando nuevas soluciones, ordenando y reutilizando código.
+            Según mi punto de vista, soy una persona con gran capacidad de aprendizaje en poco tiempo, perseverante y tengo muchas ganas de cumplir desafíos y metas personales, tales como proyectos más grandes y/o complicados.
+            <br>
+            Actualmente me encuentro estudiando el lenguaje Javascript orientado a ReactJS, Django RestFramework y FastAPI.</p>
+        <a href="{% static 'portfolio/cvINGLES.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3" style="background-color: purple; border-color: darkmagenta;" target="_blank">¡Descarga mi CV!</a>
+    </div>
+</header>
+
+    
+    
+<div class="row my-4 text-center"> 
+    <h3>Mis Proyectos</h3>
+    <p>¡Todos los proyectos y novedades se encuentran en el apartado blog!</p>
+    {% for proyecto in proyectos %}
+
+    <div class="col-md-4 p-4"> <!-- columna de proyectos-->
+        <div class="card bg-black card-project"> <!-- recuadros -->
+            <img src="{{proyecto.image.url}}" alt="{{proyecto.url}}" class="img-top">
+            <div class="card-body">     <!-- borde blanco-->
+                    <h2>{{proyecto.tittle}}</h2>
+
+                    <p>{{proyecto.description}}</p>
+    
+                    {% if proyecto.url %}
+                    <a href="{{proyecto.url}}" target="_blank" style="color: darkmagenta;" >{{proyecto.url}}</a>
+                    {% endif %}
+            </div>
+        </div>
+    </div>    
+
+    {% endfor %}
+    {% endblock %}
+</div>

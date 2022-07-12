@@ -1,0 +1,27 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <div class="container">
+    <a class="navbar-brand fw-medium fst-helvetica" href="/">LM Software</a> <!-- href="/" te lleva al home-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto" >
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
+        </li>
+    <!--<li class="nav-item {% if request.path == '/contacto/' %}active{% endif %}" >
+          <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
+        </li> --> 
+        <li class="nav-item d-flex align-items-center"> <!-- display flex -->
+          <a class="btn btn-primary btn-sm" 
+            href="{% static 'portfolio/cvINGLES.pdf' %}"
+            target="_blank"
+            style="background-color: purple; border-color: darkmagenta;"
+            >Download CV</a><!-- target blank para que abra otra pestaña-->
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  </nav>
