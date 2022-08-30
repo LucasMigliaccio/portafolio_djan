@@ -2,16 +2,27 @@
 
 {% block content %}
     
-<div class="text-center">
-    <h1>{{post.tittle}}</h1>
-    <h3 class="my-2 h5 text-muted">{{post.date|date:'F jS Y'}}</h3>
-    <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid">
+<div class="text-center" style="font-family: Helvetica, Sans-Serif;" >
+    <h1>{{post.titulo}}</h1>
 
-    <div class="my-4">
-        <p>{{post.description|safe}}</p>
-    </div>
+    <br>
+    <img src="{{post.img.url}}" alt="{{post.titulo}}" class="img-fluid">
+</div>
+<br> <br>
+
+<figure class="author-figure mb-0 mr-3 float-left"><img src="{{ post.autor.img.url }}" alt="Image" class="img-circle" style="height: 50px;width: 50px;border-radius: 35px;"><strong>&nbsp;&nbsp;{{post.autor}}</strong></figure>
+<h3 class="my-2 h5 text-muted" style="font-size: 14px;">{{post.fecha_publicacion|date:'F jS Y'}}</h3>
+<div class="my-4" style="font-size:19px;" style="font-family: Helvetica, Sans-Serif;">
+  
+    <p>{{post.descripcion|safe}}</p>
+    
+</div>
+<div class="my-4" style="font-size:19px;">
+    <p>{{post.contenido|safe}}</p>
+    
 </div>
     
     
 
 {% endblock %}
+

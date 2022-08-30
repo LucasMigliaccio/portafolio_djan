@@ -6,13 +6,14 @@
             <div class="card card-body bg-black">
                 <div class="row">
                     <div class="col-3">
-                        <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid">
+                        <img src="{{post.img.url}}" alt="{{post.titulo}}" class="img-fluid"  style="height: 200px;width: 400px;" >
                     </div>
-                    <div class="col-9">
-                        <h1>{{post.tittle}}</h1>
-                        <p>{{post.description|striptags|truncatechars:100 }}</p>
-                        <p>{{post.date|date:'M d Y'|upper}}</p>
-                        <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-primary" style="background-color: purple; border-color: darkmagenta;">{{post.tittle}}</a> 
+                    <div class="col-9" style="font-family: Helvetica, Sans-Serif;">
+                        <span class="post-category text-white bg-danger mb-3" style="font-family:Times New Roman, Times, serif;">&nbsp;&nbsp;{{ post.categoria | upper }}&nbsp;&nbsp;</span>
+                        <h2>{{post.titulo}}</h2> 
+                        <p>{{post.descripcion|striptags|truncatechars:100 }}</p>
+                        <p>{{post.fecha_publicacion|date:'d M Y'|upper}}</p>
+                        <a href="{% url 'blog:post_detail' post.id %}" class="btn btn-primary" style="background-color: purple; border-color: darkmagenta;">{{post.titulo}}</a> 
                     </div>
                 </div>
 

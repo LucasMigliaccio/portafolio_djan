@@ -4,46 +4,141 @@
 
 {% load static %}
 <header class="row bg-black">
-    <div class="col-md-4 my-auto">
-        <img src="{% static 'portfolio\184647836_1062100440864820_6691863271731750045_n.jpg' %}" style="border-radius: 15px;" width="390" height="390" alt="">
+
+        <div class="col-md-4 my-auto">
+        <img src="{% static 'portfolio\asasaaasaaa_copu.jpg' %}" style="border-radius:220px; border-color: chartreuse;"  width="370" height="390"  alt="">
     </div>
 
     <div class="col-md-8 my-auto">
-        <h1> <strong>Lucas Migliaccio</strong></h1>
-        <h3>Python Backend developer/Python Software developer</h3>
-        <p>Tengo 20 años, me encuentro en mi tercer año de ingeniería informática en la Universidad Nacional Arturo Jauretche, programo ya hace 1 año y 2 meses, Asimismo cuento con una gran cantidad de horas por día a mi favor resolviendo problemas, creando nuevas soluciones, ordenando y reutilizando código.
-            Según mi punto de vista, soy una persona con gran capacidad de aprendizaje en poco tiempo, perseverante y tengo muchas ganas de cumplir desafíos y metas personales, tales como proyectos más grandes y/o complicados.
+        <h1 style="color: darkmagenta;"> <strong>Lucas Migliaccio</strong></h1>
+        <h3 style="color: purple;">Python Backend developer/Python Software developer</h3>
+        <p>Tengo 20 años, me encuentro en mi tercer año de ingeniería informática en la Universidad Nacional Arturo Jauretche, programo dedicadamente hace 1 año y 2 meses, asimismo cuento con una gran cantidad de horas a favor resolviendo problemas, creando nuevas soluciones, ordenando y reutilizando código.
+            A mí juicio, soy una persona con gran capacidad de aprendizaje en poco tiempo, perseverante y tengo muchas ganas de cumplir desafíos y metas personales, tales como proyectos más grandes y/o complicados.
             <br>
-            Actualmente me encuentro estudiando el lenguaje Javascript orientado a ReactJS, Django RestFramework y FastAPI.</p>
-        <a href="{% static 'portfolio/cvINGLES.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3" style="background-color: purple; border-color: darkmagenta;" target="_blank">¡Descarga mi CV!</a>
-    </div>
+            Actualmente me encuentro estudiando el lenguaje Javascript orientado a ReactJS de manera autodidacta, inglés e ingeniería informática en la Universidad.</p>
+        <a href="{% static 'portfolio/lucas-migliaccio-cv.pdf' %}" class="btn btn-primary btn-lg rounded-0 my-3" style="background-color: #2A0042; border-color: #37144B;" target="_blank">¡Descarga mi CV!</a>
+
+
+
 </header>
 
-    
-    
-<div class="row my-4 text-center"> 
-    <h3>Mis Proyectos</h3>
-    <p>¡Todos los proyectos y novedades se encuentran en el apartado blog!</p>
 
-    <a href="{% url 'blog:posts' %}" class="btn btn-primary btn-m rounded-0 my-3" style="background-color: purple; border-color: darkmagenta;" >¡Apartado Blog!</a>
-    
+
+
+
+<div class="row my-4 text-center">
+    <h3 style="color: purple;">Mis Proyectos</h3>
+    <p>¡Todos los proyectos y novedades se encuentran en el apartado proyectos!</p>
+
+    <a href="{% url 'proyectos:posts' %}" class="btn btn-primary btn-m rounded-0 my-3" style="background-color: #2A0042 ; border-color: #37144B;" >¡Apartado Proyectos!</a>
+
     {% for proyecto in proyectos %}
 
     <div class="col-md-4 p-4"> <!-- columna de proyectos-->
         <div class="card bg-black card-project"> <!-- recuadros -->
+
             <img src="{{proyecto.image.url}}" alt="{{proyecto.url}}" class="img-top">
             <div class="card-body">     <!-- borde blanco-->
                     <h2>{{proyecto.tittle}}</h2>
 
                     <p>{{proyecto.description}}</p>
-    
+
                     {% if proyecto.url %}
-                    <a href="{{proyecto.url}}" target="_blank" style="color: darkmagenta;" >{{proyecto.url}}</a>
+                    <a href="{{proyecto.url}}"  style="color: darkmagenta;" >{{proyecto.url}}</a>
                     {% endif %}
+
+
             </div>
         </div>
-    </div>    
+    </div>
 
     {% endfor %}
-    {% endblock %}
+
+
+
+    
+
+
 </div>
+
+<br>
+
+<div class="row text-center"> <!-- my-2 -->
+    <h3 style="color: purple;">Lenguajes</h3>
+
+    {% for lenguaje in lenguajes %}
+    
+        <div class="col-md-3 p-4">
+    
+                <div class="card card-project" style="width: 100%; margin: 10px 10px; background-color: black;">
+                      
+                    <img src="{{lenguaje.image.url}}" class="card-img-top" style="height: 200px;">
+    
+                    
+                      <div class="card-body">
+                            <h6 class="card-tittle text-center"><strong>{{lenguaje.tittle}}</strong></h6> 
+                        
+                      </div> <!-- card-body cerrada-->
+    
+    
+    
+                </div> <!-- card cerrada-->
+        </div>
+        
+    {% endfor %}
+    </div>     <!-- row cerrada-->
+
+
+
+
+<div class="row text-center"> <!-- my-2 -->
+    <h3 style="color: purple;">Databases</h3>
+
+    {% for database in databases %}
+    
+        <div class="col-md-4 p-4">
+    
+                <div class="card card-project" style="width: 100%; margin: 10px 10px; background-color: black;">
+                      
+                    <img src="{{database.image.url}}" class="card-img-top" style="height: 200px;">
+    
+                    
+                      <div class="card-body">
+                            <h6 class="card-tittle text-center"><strong>{{database.tittle}}</strong></h6> 
+                        
+                      </div> <!-- card-body cerrada-->
+    
+    
+    
+                </div> <!-- card cerrada-->
+        </div>
+        
+    {% endfor %}
+    </div>     <!-- row cerrada-->
+
+
+
+    <br><br>
+
+    <div class="row text-center"> <!-- my-2 -->
+        <h3 style="color: purple;">Complementos</h3>
+    
+        {% for complement in complements %}
+        
+            <div class="col-md-3 p-4">
+        
+                    <div class="card" style="width: 100%; margin: 10px 10px; background-color: black;">
+                          
+                        <img src="{{complement.image.url}}" class="card-img-top" style="height: 200px;">
+        
+                        
+                          <div class="card-body">
+                                <h6 class="card-tittle text-center" style=" border-radius: 20px;"><strong>{{complement.tittle}}</strong></h6> 
+                            
+                          </div> <!-- card-body cerrada-->
+        
+                    </div> <!-- card cerrada-->
+            </div>
+        {% endfor %}
+        </div>     <!-- row cerrada-->
+{% endblock %}

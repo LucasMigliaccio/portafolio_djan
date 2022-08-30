@@ -10,3 +10,32 @@ class Project(models.Model):
     description=CharField(max_length=250)
     image=ImageField(upload_to="portfolio/images/")
     url=URLField(blank=True)
+
+    def __str__(self):
+        return self.tittle
+
+
+
+class Lenguajes(models.Model):
+    tittle=CharField(max_length=25)
+    image=ImageField(upload_to="lenguajes/images/")
+
+    def __str__(self):
+        return self.tittle
+
+
+
+class Databases(models.Model):
+    tittle=CharField(max_length=25)
+    image=ImageField(upload_to="lenguajes/images/")
+
+    def __str__(self):
+        return self.tittle
+
+
+class Complements(models.Model):
+    tittle=CharField(max_length=25)
+    image=ImageField(upload_to="lenguajes/images/")
+
+    def __str__(self):
+        return self.tittle

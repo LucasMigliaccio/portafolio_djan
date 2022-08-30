@@ -7,15 +7,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto" >
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'blog:posts' %}">Blog</a>
+        
+       <li class="nav-item">
+          <a class="nav-link" href="{% url 'blog:post' %}">Blog</a>
         </li>
-    <!--<li class="nav-item {% if request.path == '/contacto/' %}active{% endif %}" >
-          <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
-        </li> --> 
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'proyectos:posts' %}">Proyectos</a>
+        </li>
+
+          <a class="nav-link" href="{% url 'contacto:contacto' %}">Contacto</a>
+        </li>
+        
         <li class="nav-item d-flex align-items-center"> <!-- display flex -->
           <a class="btn btn-primary btn-sm" 
-            href="{% static 'portfolio/cvINGLES.pdf' %}"
+            href="{% static 'portfolio/lucas-migliaccio-cv-ingles.pdf' %}"
             target="_blank"
             style="background-color: purple; border-color: darkmagenta;"
             >Download CV</a><!-- target blank para que abra otra pestaña-->
